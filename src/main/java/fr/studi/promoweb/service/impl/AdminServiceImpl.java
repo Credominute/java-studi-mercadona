@@ -24,4 +24,24 @@ public class AdminServiceImpl implements AdminService {
     public Admin getAdminById(Long id){
         return adminRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void deleteAdminById(Long id){
+        adminRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateAdminById(Admin admin, Long id){
+        Admin oldAdmin = getAdminById(id);
+
+        if(oldAdmin != null){
+            oldAdmin.setNom(admin.getNom());
+            adminRepository.save(oldAdmin);
+        }
+    }
+
+    @Override
+    public void createAdmin(Admin admin){
+        adminRepository.save(admin);
+    }
 }

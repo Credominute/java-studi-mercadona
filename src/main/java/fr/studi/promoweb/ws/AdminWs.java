@@ -27,18 +27,18 @@ public class AdminWs {
 
     @PostMapping
     public void createAdmin(@RequestBody Admin admin){
-
+        adminService.createAdmin(admin);
     }
 
     @PutMapping("{id}")
     public void updateAdminById(@RequestBody Admin admin,
                                 @PathVariable Long id){
-
+        adminService.updateAdminById(admin,id);
     }
 
     @DeleteMapping("{id}")
     public void deleteAdminById(@PathVariable Long id){
-
+        adminService.deleteAdminById(id);
     }
 
 }

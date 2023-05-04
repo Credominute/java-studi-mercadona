@@ -8,4 +8,10 @@
         List<Admin> getAllAdmin();
 
         Admin getAdminById(Long id);
+
+        void deleteAdminById(Long id);
+
+        void updateAdminById(Admin admin, Long id);
+
+        void createAdmin(Admin admin);
     }
