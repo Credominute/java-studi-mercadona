@@ -1,5 +1,6 @@
 package fr.studi.promoweb.ws;
 
+import fr.studi.promoweb.pojo.Categorie;
 import fr.studi.promoweb.pojo.Produit;
 import fr.studi.promoweb.service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,23 +11,28 @@ import java.util.List;
 @RequestMapping(ApiRegistration.API_REST
         +ApiRegistration.PRODUIT)
 @RestController
-public class ProductWs {
+public class ProduitWs {
 
     @Autowired
     private ProduitService produitService;
 
     @GetMapping
-    public List<Produit> getAllProduct() {
+    public List<Produit> getAllProduit() {
         return produitService.getAllProduit();
     }
 
     @GetMapping("{id}")
-    public Produit getProductById(@PathVariable("id") Long id) {
+    public Produit getProduitById(@PathVariable("id") Long id) {
         return produitService.getProduitById(id);
     }
 
+    @GetMapping(ApiRegistration.CATEGORIE + "{categorie}")
+    public List<Produit>getProduitByCategorie(@PathVariable Categorie categorie) {
+        return produitService.getAllProduitByCategorie(categorie);
+    }
+
     @PostMapping
-    public void createProduct(@RequestBody Produit produit) {
+    public void createProduit(@RequestBody Produit produit) {
 
     }
 }

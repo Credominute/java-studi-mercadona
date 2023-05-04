@@ -13,3 +13,7 @@ management:
     web:
       exposure:
         include: 'x'
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
