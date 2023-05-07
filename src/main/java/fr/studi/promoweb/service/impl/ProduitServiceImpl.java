@@ -42,8 +42,16 @@ public class ProduitServiceImpl implements ProduitService {
     public void updateProduitById(Produit produit, Long id){
         Produit oldProduit = getProduitById(id);
 
+        //Si j'ai un produit
         if(oldProduit != null){
+
+            //je modifie les informations
             oldProduit.setLibele1(produit.getLibele1());
+            oldProduit.setPrix(produit.getPrix());
+            oldProduit.setDescription(produit.getDescription());
+            oldProduit.setImage(produit.getImage());
+
+            //je le sauvegarde en base
             produitRepository.save(oldProduit);
         }
     }

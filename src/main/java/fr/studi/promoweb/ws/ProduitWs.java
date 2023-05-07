@@ -33,6 +33,17 @@ public class ProduitWs {
 
     @PostMapping
     public void createProduit(@RequestBody Produit produit) {
+        produitService.createProduit(produit);
+    }
 
+    @PutMapping("{id}")
+    public void updateProduitById(@RequestBody Produit produit,
+                                    @PathVariable Long id){
+        produitService.updateProduitById(produit,id);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteProduitById(@PathVariable Long id){
+        produitService.deleteProduitById(id);
     }
 }

@@ -34,8 +34,15 @@ public class PromotionServiceImpl implements PromotionService {
     public void updatePromotionById(Promotion promotion, Long id){
         Promotion oldPromotion = getPromotionById(id);
 
+        //Si j'ai une promotion
         if(oldPromotion != null){
-            oldPromotion.setPourcentageRemise(promotion.getPourcentageRemise());
+
+            //je modifie les informations
+            oldPromotion.setPourcentRemise(promotion.getPourcentRemise());
+            oldPromotion.setDateDebut(promotion.getDateDebut());
+            oldPromotion.setDateFin(promotion.getDateFin());
+
+            //je la sauvegarde en base
             promotionRepository.save(oldPromotion);
         }
     }
