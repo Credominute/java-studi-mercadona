@@ -8,4 +8,10 @@ public interface CategorieService {
     List<Categorie> getAllCategorie();
 
     Categorie getCategorieById(Long id);
+
+    void deleteCategorieById(Long id);
+
+    void updateCategorieById(Categorie categorie, Long id);
+
+    void createCategorie(Categorie categorie);
 }

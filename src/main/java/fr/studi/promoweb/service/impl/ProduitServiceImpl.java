@@ -33,4 +33,23 @@ public class ProduitServiceImpl implements ProduitService {
     public List<Produit> getAllProduitByCategorie(Categorie categorie) {
         return produitRepository.findProduitByCategorie(categorie);
     }
+
+    @Override
+    public void deleteProduitById(Long id){
+        produitRepository.deleteById(id);
+    }
+    @Override
+    public void updateProduitById(Produit produit, Long id){
+        Produit oldProduit = getProduitById(id);
+
+        if(oldProduit != null){
+            oldProduit.setLibele1(produit.getLibele1());
+            produitRepository.save(oldProduit);
+        }
+    }
+
+    @Override
+    public void createProduit(Produit produit){
+        produitRepository.save(produit);
+    }
 }
