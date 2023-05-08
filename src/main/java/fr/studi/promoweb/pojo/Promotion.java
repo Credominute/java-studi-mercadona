@@ -36,6 +36,7 @@ public class Promotion {
     public boolean equals(Promotion obj) {
         return this.promotion_id.equals(obj.getPromotion_id()) &&
                 this.dateDebut.equals(obj.getDateDebut()) &&
+                this.dateFin.equals(obj.getDateFin()) &&
                 this.pourcentRemise.equals(obj.getPourcentRemise());
     }
 
