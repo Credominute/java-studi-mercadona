@@ -9,17 +9,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-
 public class Token {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long token_id;
+    private Long id_token;
 
     @Column(unique = true)
     private String token;
 
-    @Enumerated(EnumType.STRING)
     private TokenType tokenType = TokenType.BEARER;
 
     private boolean revoked;
@@ -27,7 +25,7 @@ public class Token {
     private boolean expired;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "user_id")
+    @JoinColumn(name= "id_user")
     private User user;
 
 }

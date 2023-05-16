@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,7 +22,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue
-    private Long user_id;
+    private Long id_user;
 
     private String firstname;
 
@@ -73,7 +72,7 @@ public class User implements UserDetails {
     }
 
     public Long getId() {
-        return user_id;
+        return id_user;
     }
 
     public String getFirstname() {
