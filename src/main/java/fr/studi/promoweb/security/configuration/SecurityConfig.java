@@ -80,5 +80,4 @@ public class SecurityConfig {
                 .logoutSuccessHandler(((request, response, authentication) -> SecurityContextHolder.clearContext()));
         return httpSecurity.build();
     }
-
 }

@@ -1,6 +1,5 @@
 package fr.studi.promoweb.security.service;
 
-import fr.studi.promoweb.security.configuration.JwtAuthenticationFilter;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -23,31 +22,37 @@ public class JwtService {
     private String secretKey;
 
     @Value("security.jwt.expiration")
-    private Long jwtExpiration;
+    private String jwtExpiration;
 
     @Value("security.jwt.refresh-token.expiration")
-    private Long refreshExpiration;
+    private String refreshExpiration;
+
 
     public String extractUsername(String jwt) {
         return extractClaim(jwt, Claims::getSubject);
     }
 
-    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver){
         Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
+
     }
 
     public String generateToken(
-            Map<String, Object> extraClaims,
+            Map<String,Object> extraClaims,
             UserDetails userDetails
-    ) {
-        return buildToken(extraClaims, userDetails, jwtExpiration);
+    ){
+        return buildToken(extraClaims,userDetails,Long.parseLong(jwtExpiration));
+    }
+
+    public String generateToken(UserDetails userDetails) {
+        return generateToken(new HashMap<>(), userDetails);
     }
 
     public String generateRefreshToken(
             UserDetails userDetails
-    ) {
-        return buildToken(new HashMap<>(), userDetails, refreshExpiration);
+    ){
+        return buildToken(new HashMap<>(),userDetails,Long.parseLong(refreshExpiration));
     }
 
     private String buildToken(Map<String, Object> extraClaims, UserDetails userDetails, Long jwtExpiration) {
@@ -60,19 +65,19 @@ public class JwtService {
                 .compact();
     }
 
-    private Date extractExpiration(String token) {
-        return extractClaim(token, Claims::getExpiration);
+
+    private Date extractExpiration(String token){
+        return extractClaim(token,Claims::getExpiration);
     }
 
-    private boolean isTokenExpired(String token) {
+    private boolean isTokenExpired(String token){
         return extractExpiration(token).before(new Date());
     }
 
-    public boolean isTokenValid(String token, UserDetails userDetails) {
+    public boolean isTokenValid(String token, UserDetails userDetails){
         String username = extractUsername(token);
         return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
     }
-
 
     private Claims extractAllClaims(String token) {
         return Jwts
