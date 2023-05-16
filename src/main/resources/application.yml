@@ -19,12 +19,3 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-
-security:
-  jwt:
-    secret-key: $2y$10$3yI7ndB87siCPQ9fGuolyuvu5kIB0qpF5Vxn5m/6aEtnqRbw7t.ry
-    expiration: 60000 # a day
-    refresh-token:
-        expiration: 604800000 # 7 days
-
-
