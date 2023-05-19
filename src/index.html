@@ -43,11 +43,12 @@
         <ul class="navbar-nav">
           <!-- Elements du menu -->
           <li class="nav-item">
-             <!--<a class="nav-link" href="pages/manuel.html">Manuel d'utilisation</a>-->
-             <a routerlink="src/pages/manuel.html">Manuel d'utilisation</a>
+            <!--<a class="nav-link" href="pages/manuel.html">Manuel d'utilisation</a>-->
+            <a class="nav-link" routerlink="/manuel">Manuel d'utilisation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/catalogue.html">Catalogue de Produit</a>
+            <!--a class="nav-link" href="pages/catalogue.html">Catalogue de Produits</a>-->
+            <a class="nav-link" routerlink="/catalogue">Catalogue de Produits</a>
           </li>
         </ul>
       </div>
@@ -57,14 +58,15 @@
     <!-- Déclaration du composant -->
     <ol class="breadcrumb">
         <!-- Item du fil d'ariane -->
-        <li class="breadcrumb-item"><a href="pages/admin.html">Admin</a></li>
+        <!--li class="breadcrumb-item"><a href="pages/admin.html">Admin</a></li>-->
+        <li class="breadcrumb-item"><a routerlink="/admin">Administration</a></li>
         <li class="breadcrumb-item active" aria-current="page">Espace réservé</li>
     </ol>
-</nav>
+  </nav>
 
-<div class="row">
-  <h2 class="col-12">Actualités</h2>
-  <div class="col-4">
+  <div class="row">
+    <h2 class="col-12">Actualités</h2>
+    <div class="col-4">
       <!-- Déclaration du composant -->
       <div class="card">
           <!-- Image située en haut -->
@@ -77,12 +79,13 @@
               <p class="card-text">
                   Il fond dans la bouche. En promotion, - 15% !
               </p>
-              <a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>
+              <!--a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>-->
+              <a class="btn btn-secondary" routerlink="/viandes-et-poissons">Lire la suite...</a>
           </div>
       </div>
-  </div>
+    </div>
 
-  <div class="col-4">
+    <div class="col-4">
       <!-- Déclaration du composant -->
       <div class="card">
           <!-- Image située en haut -->
@@ -95,12 +98,13 @@
               <p class="card-text">
                   Elle vient de France. En promotion, - 10% !
               </p>
-              <a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>
+              <!--a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>-->
+              <a class="btn btn-secondary" routerlink="/viandes-et-poissons">Lire la suite...</a>
           </div>
       </div>
-  </div>
+    </div>
 
-  <div class="col-4">
+    <div class="col-4">
       <!-- Déclaration du composant -->
       <div class="card">
           <!-- Image située en haut -->
@@ -113,11 +117,16 @@
               <p class="card-text">
                 Fruité, c'est délicieux. En promotion, - 25% !
               </p>
-              <a class="btn btn-secondary" href="pages/laitages_et_eau.html" >Lire la suite...</a>
+              <!--a class="btn btn-secondary" href="pages/laitages_et_eau.html" >Lire la suite...</a>-->
+              <a class="btn btn-secondary" routerlink="/laitages-et-eau">Lire la suite...</a>
           </div>
       </div>
+    </div>
   </div>
-</div>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 
   <footer>
       @Tous droits réservés. Bon appétit !
