@@ -8,13 +8,14 @@ import { LaitagesEtEauComponent } from './modules/laitages-et-eau/laitages-et-ea
 import { ManuelComponent } from './modules/manuel/manuel.component';
 import { ViandesEtPoissonsComponent } from './modules/viandes-et-poissons/viandes-et-poissons.component';
 
+
 const routes: Routes = [
   { path: 'admin', component: AdminComponent, },
   { path: 'catalogue', component: CatalogueComponent },
-  { path: 'fruits_et_legumes', component: FruitsEtLegumesComponent },
-  { path: 'laitages_et_eau', component: LaitagesEtEauComponent },
+  { path: 'fruits-et-legumes', component: FruitsEtLegumesComponent },
+  { path: 'laitages-et-eau', component: LaitagesEtEauComponent },
   { path: 'manuel', component: ManuelComponent },
-  { path: 'viandes_et_poissons', component: ViandesEtPoissonsComponent }
+  { path: 'viandes-et-poissons', component: ViandesEtPoissonsComponent }
 ];
 
 @NgModule({
