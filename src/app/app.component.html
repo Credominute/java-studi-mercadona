@@ -9,10 +9,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
+<router-outlet></router-outlet>
+
 <body>
-  <p>front app is running!</p>
   <div class="container">
-    <img src="images/mercadona.jpg" width="550" height="100">
+    <img [src]="imageMercadona" width="550" height="100"/>
     <div class="alert alert-success" role="alert">
       Site de vente en ligne de produits avec de nombreuses promotions, voyez par vous-même !
     </div>
@@ -45,11 +46,11 @@
           <!-- Elements du menu -->
           <li class="nav-item">
             <!--<a class="nav-link" href="pages/manuel.html">Manuel d'utilisation</a>-->
-            <a class="nav-link" routerLink="manuel" >Manuel d'utilisation</a>
+            <a class="nav-link" routerLink="manuel">Manuel d'utilisation</a>
           </li>
           <li class="nav-item">
             <!--a class="nav-link" href="pages/catalogue.html">Catalogue de Produits</a>-->
-            <a class="nav-link" routerLink="catalogue" >Catalogue de Produits</a>
+            <a class="nav-link" routerLink="catalogue">Catalogue de Produits</a>
           </li>
         </ul>
       </div>
@@ -60,7 +61,7 @@
     <ol class="breadcrumb">
         <!-- Item du fil d'ariane -->
         <!--li class="breadcrumb-item"><a href="pages/admin.html">Admin</a></li>-->
-        <li class="breadcrumb-item"><a routerlink="admin" routerlinkactive="active">Administration</a></li>
+        <li class="breadcrumb-item"><a routerLink="admin">Administration</a></li>
         <li class="breadcrumb-item active" aria-current="page">Espace réservé</li>
     </ol>
   </nav>
@@ -81,7 +82,7 @@
                   Il fond dans la bouche. En promotion, - 15% !
               </p>
               <!--a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>-->
-              <a class="btn btn-secondary" routerlink="viandes-et-poissons">Lire la suite...</a>
+              <a class="btn btn-secondary" routerLink="viandes-et-poissons">Lire la suite...</a>
           </div>
       </div>
     </div>
@@ -119,15 +120,11 @@
                 Fruité, c'est délicieux. En promotion, - 25% !
               </p>
               <!--a class="btn btn-secondary" href="pages/laitages_et_eau.html" >Lire la suite...</a>-->
-              <a class="btn btn-secondary" rouLerlink="laitages-et-eau">Lire la suite...</a>
+              <a class="btn btn-secondary" routerLink="laitages-et-eau">Lire la suite...</a>
           </div>
       </div>
     </div>
   </div>
-
-  <main>
-    <router-outlet></router-outlet>
-  </main>
 
   <footer>
       @Tous droits réservés. Bon appétit !
@@ -155,4 +152,5 @@
     .then(result => console.log(result))
     .catch(error => console.log('error', error));-->
 </body>
+
 </html>

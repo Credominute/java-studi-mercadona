@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./viandes-et-poissons.component.css']
 })
 export class ViandesEtPoissonsComponent {
-
+  imageLangoustines: any = "assets/images/langoustines.jpg";
+  imagePoulet: any = "assets/images/poulet.jpg";
+  imageSaumon: any = "assets/images/saumon.jpg";
+  imageBoeuf: any = "assets/images/boeuf.jpg";
+  imageCabillaud: any = "assets/images/cabillaud.jpg";
 }

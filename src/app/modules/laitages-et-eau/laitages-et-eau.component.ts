@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./laitages-et-eau.component.css']
 })
 export class LaitagesEtEauComponent {
-
+  imageBeurre: any = "assets/images/beurre.jpg";
+  imageEvian: any = "assets/images/evian.jpg";
+  imageTiramisu: any = "assets/images/tiramisu.jpg";
+  imageYaourts: any = "assets/images/yaourts.jpg";
 }
