@@ -8,7 +8,9 @@ import { FruitsEtLegumesComponent } from './modules/fruits-et-legumes/fruits-et-
 import { LaitagesEtEauComponent } from './modules/laitages-et-eau/laitages-et-eau.component';
 import { ManuelComponent } from './modules/manuel/manuel.component';
 import { ViandesEtPoissonsComponent } from './modules/viandes-et-poissons/viandes-et-poissons.component';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { ServiceComponent } from './service/service.component';
+import { EnvironmentComponent } from './environment/environment.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { RouterModule } from '@angular/router';
     LaitagesEtEauComponent,
     ManuelComponent,
     ViandesEtPoissonsComponent,
+    ServiceComponent,
+    EnvironmentComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

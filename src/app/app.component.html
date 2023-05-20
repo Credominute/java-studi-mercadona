@@ -8,8 +8,9 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
 
+<body>
+  <p>front app is running!</p>
   <div class="container">
     <img src="images/mercadona.jpg" width="550" height="100">
     <div class="alert alert-success" role="alert">
@@ -44,11 +45,11 @@
           <!-- Elements du menu -->
           <li class="nav-item">
             <!--<a class="nav-link" href="pages/manuel.html">Manuel d'utilisation</a>-->
-            <a class="nav-link" routerlink="/manuel">Manuel d'utilisation</a>
+            <a class="nav-link" routerlink="manuel" routerlinkactive="active">Manuel d'utilisation</a>
           </li>
           <li class="nav-item">
             <!--a class="nav-link" href="pages/catalogue.html">Catalogue de Produits</a>-->
-            <a class="nav-link" routerlink="/catalogue">Catalogue de Produits</a>
+            <a class="nav-link" routerlink="catalogue" routerlinkactive="active">Catalogue de Produits</a>
           </li>
         </ul>
       </div>
@@ -59,7 +60,7 @@
     <ol class="breadcrumb">
         <!-- Item du fil d'ariane -->
         <!--li class="breadcrumb-item"><a href="pages/admin.html">Admin</a></li>-->
-        <li class="breadcrumb-item"><a routerlink="/admin">Administration</a></li>
+        <li class="breadcrumb-item"><a routerlink="admin" routerlinkactive="active">Administration</a></li>
         <li class="breadcrumb-item active" aria-current="page">Espace réservé</li>
     </ol>
   </nav>
@@ -80,7 +81,7 @@
                   Il fond dans la bouche. En promotion, - 15% !
               </p>
               <!--a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>-->
-              <a class="btn btn-secondary" routerlink="/viandes-et-poissons">Lire la suite...</a>
+              <a class="btn btn-secondary" routerlink="viandes-et-poissons" routerlinkactive="active">Lire la suite...</a>
           </div>
       </div>
     </div>
@@ -99,7 +100,7 @@
                   Elle vient de France. En promotion, - 10% !
               </p>
               <!--a class="btn btn-secondary" href="pages/viandes_et_poissons.html">Lire la suite...</a>-->
-              <a class="btn btn-secondary" routerlink="/viandes-et-poissons">Lire la suite...</a>
+              <a class="btn btn-secondary" routerlink="viandes-et-poissons" routerlinkactive="active">Lire la suite...</a>
           </div>
       </div>
     </div>
@@ -118,7 +119,7 @@
                 Fruité, c'est délicieux. En promotion, - 25% !
               </p>
               <!--a class="btn btn-secondary" href="pages/laitages_et_eau.html" >Lire la suite...</a>-->
-              <a class="btn btn-secondary" routerlink="/laitages-et-eau">Lire la suite...</a>
+              <a class="btn btn-secondary" routerlink="laitages-et-eau" routerlinkactive="active">Lire la suite...</a>
           </div>
       </div>
     </div>

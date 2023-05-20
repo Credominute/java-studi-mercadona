@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+//import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,11 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front';
+  title = 'angular';
+
+  //getProduct() {
+  //const products = this.httpClient.get('localhost8080/prodct/all').subscribe(
+  //(data) => {
+  //console.log(data)
+  //})}
 }
