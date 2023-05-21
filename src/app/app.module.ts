@@ -9,7 +9,7 @@ import { LaitagesEtEauComponent } from './modules/laitages-et-eau/laitages-et-ea
 import { ManuelComponent } from './modules/manuel/manuel.component';
 import { ViandesEtPoissonsComponent } from './modules/viandes-et-poissons/viandes-et-poissons.component';
 import { AppRoutingModule } from './app-routing.module';
-import { EnvironmentComponent } from './environment/environment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,11 @@ import { EnvironmentComponent } from './environment/environment.component';
     LaitagesEtEauComponent,
     ManuelComponent,
     ViandesEtPoissonsComponent,
-    EnvironmentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
