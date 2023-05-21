@@ -24,6 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular app is running!');
+    expect(compiled.textContent).toContain('Site de vente en ligne de produits avec de nombreuses promotions, voyez par vous-même !');
   });
 });
