@@ -1,14 +1,13 @@
 package fr.studi.promoweb.security.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Entity
-@Getter
-@Setter
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Token {
 
     @Id

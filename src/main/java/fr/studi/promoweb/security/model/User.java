@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,13 +24,10 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Long id_user;
-
     private String firstname;
-
     private String lastname;
     private String email;
     private String password;
-
     private Role role;
 
     @OneToMany(mappedBy = "user")

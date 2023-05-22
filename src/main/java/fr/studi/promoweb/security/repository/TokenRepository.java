@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.DoubleStream;
 
 @Repository
 public interface TokenRepository extends JpaRepository<Token, Long> {
@@ -16,7 +17,7 @@ public interface TokenRepository extends JpaRepository<Token, Long> {
         on t.user.id_user = u.id_user\s
         where u.id_user = :id and (t.expired = false or t.revoked = false)\s
         """)
-    List<Token> findAllValidTokenByUser(Long id_token);
+    List<Token> findAllValidTokenByUser(Long id);
 
     Optional<Token> findByToken(String token);
 }
