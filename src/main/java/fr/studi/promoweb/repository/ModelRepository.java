@@ -8,16 +8,16 @@ import java.util.List;
 
 @RepositoryRestController
 public class ModelRepository {
-    private static final List<Model> listeDesModeles = new ArrayList<>();
+    private static final List<Model> listeDesDesserts = new ArrayList<>();
 
     static {
-        listeDesModeles.add(new Model(1, "Samsung", 700));
-        listeDesModeles.add(new Model(2, "Iphone", 1200));
-        listeDesModeles.add(new Model(3, "Huawei", 650));
+        listeDesDesserts.add(new Model(1, "Tiramisu", 7));
+        listeDesDesserts.add(new Model(2, "Yaourt", 12));
+        listeDesDesserts.add(new Model(3, "Tarte", 6));
     }
 
     public Model findModelById(int modelID) {
-        for (Model model : listeDesModeles) {
+        for (Model model : listeDesDesserts) {
             if (model.getModelId() == modelID) {
                 return model;
             }
