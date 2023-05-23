@@ -11,4 +11,6 @@ public class PromoApplication {
     public static int dureePromotion(int dureePromotionModif, int dureePromotion) {
         return dureePromotionModif - dureePromotion;
     }
+
+
 }
