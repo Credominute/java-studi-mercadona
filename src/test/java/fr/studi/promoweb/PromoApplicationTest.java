@@ -26,8 +26,8 @@ import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 
 
-@ExtendWith(MockitoExtension.class)
-
+//@ExtendWith(MockitoExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PromoApplicationTest {
 
     @Test
@@ -38,7 +38,7 @@ public class PromoApplicationTest {
     public void dureePromotionTest() {
         assertEquals(3, dureePromotion(4, 1));
     }
-    @InjectMocks
+   /* @InjectMocks
     private final ModelController modelController = new ModelController();
     @Mock
     private ModelRepository modelRepository;
@@ -48,5 +48,24 @@ public class PromoApplicationTest {
                 .thenReturn(new Model(2, "Yaourt", 7));
         assertThat(modelController.getModelById(2).getMarque(),
                 is("Yaourt"));
+    }*/
+    /*@InjectMocks
+    private final TestRestTemplate restTemplate = new TestRestTemplate();*/
+    @Autowired private TestRestTemplate restTemplate;
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Test
+    public void testGetAll() throws JsonProcessingException {
+        ResponseEntity<String> reponse = this.restTemplate
+                .getForEntity("http://localhost:8080/get/1", String.class);
+
+        assertThat(reponse.getStatusCode(), equalTo(HttpStatus.OK));
+
+        JsonNode reponseENJson = objectMapper.readTree(reponse.getBody());
+
+        assertThat(reponseENJson.isMissingNode(), is(false));
+        assertThat(reponseENJson.toString(),
+                equalTo("{\"modelId\":1,\"marque\":\"Tiramisu\",\"prix\":7}"));
     }
 }
